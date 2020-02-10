@@ -1,0 +1,18 @@
+
+<div class="container container mt-4 mb-5">
+    <h4 class="display-4 text-center"> Choose one magazine </h4>     
+    <hr class="bg-dark mb-4 w-25">
+   
+    <div class="row">
+        <div class="col-md-4" *ngFor="let magazine of magazines">
+            <div class="card">
+                <div class="card-block p-3">
+                    <h4 class="card-title" name="Name">{{magazine.title}}</h4>
+                    <a [routerLink]="['/author/', magazine.id]" class="btn btn-primary rounded-0 mb-2">Add Articles</a>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+

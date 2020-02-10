@@ -1,0 +1,20 @@
+<div class="text-center">
+	<form class="form-signin" #login="ngForm" (ngSubmit)="logIn(login.value, login)">
+
+	<div *ngFor="let field of formFields">
+		<div class="form-row">
+		  <div class="col form-group">
+			<label for={{field.id}}>{{field.label}} </label>
+			<input type="text" class="form-control" name="{{field.id}}" ngModel>
+		  </div>
+		</div>
+	  </div>
+		<div class="checkbox mb-3">
+			<label>
+			<input type="checkbox" value="remember-me"> Remember me
+			</label>
+		</div>
+		<input type="submit" id="button" class="btn btn-lg btn-primary btn-block" value="Sign in"/>
+		<p class="mt-5 mb-3 text-muted">© 2020</p>
+		</form>
+</div> 

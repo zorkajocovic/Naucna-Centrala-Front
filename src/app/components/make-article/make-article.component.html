@@ -1,0 +1,26 @@
+<div class="container">
+  <form #makeArticle="ngForm" (ngSubmit)="saveArticle(makeArticle.value, makeArticle)">
+    <div class="form-group" *ngFor="let field of formFields">
+      <div class="col form-group">
+
+        <label for={{field.id}}>{{field.label}}</label>
+
+        <input class="form-control" type="text" name={{field.id}} ngModel
+          *ngIf="field.type.name=='string' && field.id!='pdf'">
+        <input class="form-control" type="checkbox" id='isReviewer' name={{field.id}} ngModel
+          *ngIf="field.type.name=='boolean'">
+        <input class="form-control" type="number" name={{field.id}} ngModel *ngIf="field.type.name=='long'">
+        <input class="form-control" type="file" name={{field.id}} (change)="onSelectPdf($event)" ngModel
+          *ngIf="field.id=='pdf' && field.type.name=='string'">
+        <select name="field.id" *ngIf="field.type.name=='enum'">
+          <option *ngFor="let val of enumValues" value={{val}}>
+            {{field.type.values[val]}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Save" class="btn btn-primary btn-block">
+    </div>
+  </form>
+</div>

@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="navbar-brand">Magazines</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedAuthor()" id="right">
+          <a class="nav-link" [routerLink]="['/publish']" routerLinkActive="navbar-brand">Publish article</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedAuthor()">
+          <a class="nav-link" [routerLink]="['/my-tasks']" routerLinkActive="navbar-brand" id="right">My tasks</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedEditor()">
+          <a class="nav-link" [routerLink]="['/editor/0']" routerLinkActive="navbar-brand" id="right">My tasks</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedReviewer()">
+          <a class="nav-link" [routerLink]="['/reviewer']" routerLinkActive="navbar-brand" id="right">My tasks</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedMainEditor()">
+          <a class="nav-link" [routerLink]="['/chief-editor/0']" routerLinkActive="navbar-brand" id="right">My tasks</a>
+        </li>
+        <li class="nav-item" id="right" *ngIf="!loggedIn">
+          <a class="nav-link" [routerLink]="['/login']" routerLinkActive="navbar-brand">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!loggedIn" id="right">
+          <a class="nav-link" [routerLink]="['/register']" routerLinkActive="navbar-brand">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedIn" >
+          <a class="nav-link" (click)="logOut()" routerLinkActive="navbar-brand" id="right">Logout</a>
+        </li>
+      </ul>
+    </div>
+  
+  </nav>

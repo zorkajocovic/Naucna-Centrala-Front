@@ -1,0 +1,60 @@
+<div class="container">
+    <h3 class="display-4 text-center"> Article </h3>
+    <hr class="bg-dark mb-4 w-25">
+    <div class="justify-content-center" id="content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-block p-3">
+                        <label>Title:</label>
+                        <p class="card-title">{{article.title}}</p>
+                        <label>Abstract:</label>
+                        <p class="card-title">{{article.abstract_}}</p>
+                        <label>Key words:</label>
+                        <p class="card-title">{{article.keyWords}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-left">
+            <form #approveForm="ngForm" (ngSubmit)="approve(approveForm.value, approveForm)">
+                <div id="content" class="form-group" *ngFor="let field of formFields">
+                    <div class="col form-group">
+
+                        <label for={{field.id}}>{{field.label}}</label>
+
+                        <input class="form-control" type="text" name={{field.id}} ngModel
+                            *ngIf="field.type.name=='string'">
+                        <input class="form-control" id="checkbox" type="checkbox" name={{field.id}} ngModel
+                            *ngIf="field.type.name=='boolean'">
+                        <input class="form-control" type="number" name={{field.id}} ngModel
+                            *ngIf="field.type.name=='long'">
+                        <select name="field.id" *ngIf="field.type.name=='enum'">
+                            <option *ngFor="let val of enumValues" value={{val}}>
+                                {{field.type.values[val]}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <input id="save" type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+            <div class="row" style="margin-top: 1%">
+                <div class="col-lg-3" style="font-weight: bold;">Insert duration for change (date format)</div>
+                <div class="col-lg-7" style="margin-left: 1%">
+                    <div class="row date">
+                        Seconds:<input class="form-control" [(ngModel)]="seconds" placeholder="ss" style="width: 13%;">
+                        Minutes:<input class="form-control" [(ngModel)]="minutes" placeholder="mm" style="width: 13%;">
+                        Hours:<input class="form-control" [(ngModel)]="hours" placeholder="HH" style="width: 13%;">
+                        Days:<input class="form-control" [(ngModel)]="days" placeholder="dd" style="width: 13%;">
+                        Months:<input class="form-control" [(ngModel)]="months" placeholder="MM" style="width: 13%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

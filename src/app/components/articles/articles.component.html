@@ -1,0 +1,27 @@
+<div class="container container mt-4 mb-5">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb40 text-center">
+      <h3 class="display-4 text-center"> Articles </h3>
+      <hr class="bg-dark mb-4 w-25">
+      <div>
+          <a class="social-icon-box" id="plus" (click)="checkIfAuthorPaid()">
+              <i class="fa fa-plus"></i>
+          </a>
+      </div>
+      <app-make-article *ngIf="showSpecificReservation == 1"></app-make-article>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4" *ngFor="let article of articles">
+        <div class="card">
+          <div class="card-block p-3">
+            <h4 class="card-title" name="Name">{{article.title}}</h4>
+            <p class="byline">
+              By <a>{{article.Author.FullName}}</a>
+            </p>
+            &nbsp;
+            <a (click)="AddToCart(article)" class="btn btn-primary rounded-0 mb-2">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

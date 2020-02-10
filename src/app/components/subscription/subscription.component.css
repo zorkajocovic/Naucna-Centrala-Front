@@ -1,0 +1,12 @@
+#pay{
+    width: 25px;
+    height: 25px;
+}
+
+#save{
+    width: 80px;
+}
+
+form{
+    position: relative;
+}

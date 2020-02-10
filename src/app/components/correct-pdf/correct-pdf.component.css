@@ -1,0 +1,13 @@
+
+#checkbox{
+    width: 25px;
+    height: 25px;
+}
+
+.date{
+    width: 900px;
+}
+
+label{
+    font-weight: bold;
+}

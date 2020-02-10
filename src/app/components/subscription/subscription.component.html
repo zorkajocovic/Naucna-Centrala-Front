@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+          <form #payForm="ngForm" (ngSubmit)="pay(payForm.value, payForm)">
+            <div id="content" class="form-group" *ngFor="let field of formFields">
+              <div class="col form-group">
+  
+                <label for={{field.id}}>{{field.label}}</label>
+  
+                <input class="form-control" type="text" name={{field.id}} ngModel *ngIf="field.type.name=='string'">
+                <input class="form-control" id="pay" type="checkbox" name={{field.id}} ngModel
+                  *ngIf="field.type.name=='boolean'">
+                <input class="form-control" type="number" name={{field.id}} ngModel *ngIf="field.type.name=='long'">
+                <select name="field.id" *ngIf="field.type.name=='enum'">
+                  <option *ngFor="let val of enumValues" value={{val}}>
+                    {{field.type.values[val]}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <input id="save" type="submit" value="Save" class="btn btn-primary btn-block" />
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>

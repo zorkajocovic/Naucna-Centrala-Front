@@ -1,0 +1,60 @@
+
+/*
+.navbar-nav {
+    flex-direction: row;
+    padding-right: .5rem !important;
+  }
+
+.fa {
+  color: aliceblue;
+  width: 40px;
+  font-size: 28px;
+}
+
+li {
+  display: inline;
+  padding-left: 20px;
+}
+
+a {
+  color: #777777;
+  text-decoration: none;
+}
+
+:hover {
+  color: black;
+}
+
+*/
+
+.fa {
+    color: rgb(25, 41, 56);
+    width: 40px;
+    font-size: 20px;
+  }
+  .badge {
+    background-color: #6394F8;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .navbar-brand{
+    /* background:rgb(208, 211, 218);*/
+     color:rgb(48, 20, 20);
+  }
+  
+  form{
+     margin-right: 2px;
+  }
+  
+  #right {
+    margin-right: 2px;
+    float: right;
+  }
