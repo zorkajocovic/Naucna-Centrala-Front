@@ -51,8 +51,10 @@ export class SubscriptionComponent implements OnInit {
 
     let x = this.magazineService.paySubscribtion(this.taskId, this.instanceId, this.magazineId, payed["payed"]).subscribe(
       res => {
-        if (res == true)
+        if (res == true){
           alert("Uspjesno ste platili clanarinu!")
+          this.router.navigate(['author/' + this.magazineId]);
+        }
         else {
           alert("Niste platili clanarinu!")
         }

@@ -63,22 +63,22 @@ export class DecideComponent implements OnInit {
     debugger
     var accepted, refused, bigChanges, smallChanges;
 
-    if (approve["accept"] == "")
+    if (approve["accepted"] == "")
       accepted = false;
     else
       accepted = true;
 
-    if (approve["acceptSmallChanges"] == "")
+    if (approve["acceptedSmallChanges"] == "")
       smallChanges = false;
     else
       smallChanges = true;
 
-    if (approve["acceptBigChanges"] == "")
+    if (approve["acceptedBigChanges"] == "")
       bigChanges = false;
     else
       bigChanges = true;
 
-    if (approve["refuse"] == "")
+    if (approve["refused"] == "")
       refused = false;
     else
       refused = true;
